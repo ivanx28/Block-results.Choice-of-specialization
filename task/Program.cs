@@ -15,3 +15,17 @@ int FindSize(string[] arbitraryArray, int requiredSize)             // Мето�
     return size;
 }
 
+string[] SelectWords(string[] arbitraryArray, int requiredSize, int y)      // Метод создания и заполнения итогового массива.
+{
+    string[] resultArray = new string[y];
+    int temp = 0;
+    for (int i = 0; i < arbitraryArray.Length; i++)
+    {
+        if (arbitraryArray[i].Length <= requiredSize) 
+        {
+            resultArray[temp] = arbitraryArray[i];
+            temp++;
+        }
+    }
+    return resultArray;
+}
