@@ -29,3 +29,26 @@ string[] SelectWords(string[] arbitraryArray, int requiredSize, int y)      // �
     }
     return resultArray;
 }
+
+Console.Write("Введите количество слов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите слова через enter:");
+string[] array = new string[n];
+for (int i = 0; i < n; i++)
+{
+    string? a = Console.ReadLine();
+    array[i] = a;
+}
+Console.WriteLine();
+Console.Write("Массив из введённых вами слов: ");
+Console.WriteLine(string.Join("| ", array));
+
+const int MAXSIZE = 3;
+
+int finalArrayLength = FindSize(array, MAXSIZE);
+string[] finalArray = SelectWords(array, MAXSIZE, finalArrayLength);
+
+Console.WriteLine();
+Console.Write("Массив, отсортированный по словам, в которых не более 3-х букв: ");
+Console.WriteLine(string.Join("| ", finalArray));
